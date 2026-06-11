@@ -28,13 +28,13 @@ export const actions = {
 
         // Passwort mit dem gespeicherten Hash vergleichen
         if (!(await verifyPassword(password, rows[0].password_hash))) {
-            return fail(400, { error: 'Falsches Passwort.' });
+            return fail(400, { error: 'Falsche Passwort.' });
         }
 
         // Neue Session für den angemeldeten Benutzer erstellen
         const sessionId = await createSession(rows[0].id);
 
-        // Session-ID als Cookie im Browser speichern
+        // Session-ID als Cookie im Browser peichern
         cookies.set('session', sessionId, {
             path: '/',                 
             httpOnly: true,           
