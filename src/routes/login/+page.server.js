@@ -10,7 +10,7 @@ export const actions = {
         const username = form.get('username');
         const password = form.get('password');
 
-        // Überprüfen, ob alle Pflichtfelder ausgefüllt wurden
+        // Überprüfen ob alle Pflichtfelder ausgefüllt wurden
         if (!username || !password) {
             return fail(400, { error: 'Bitte alle Felder ausfüllen.' });
         }
